@@ -21,13 +21,11 @@ var controller = {
 
 		const request = require('request-promise');
 	    const options = {
-	        url : "https://dpowney1463884.australia-3.evergage.com/api2/authevent/dev",
+	        url : process.env.IS_AUTHEVENT_URL,
 	        method : 'POST',
 	        headers: {
 		        'Content-Type': 'application/json',
-		        'Authorization': 'Basic QUFDRTg1RjItMzg4Ny00OEIxLUJEQUEtNjRGQzI2NUNCQTlDOmxJT3pHUXpiX0JhbWI1dzNRWnhOOW5ESV9WT2ZhTlNBTEtOaTVLT0w0UXM='
-		        // AACE85F2-3887-48B1-BDAA-64FC265CBA9C:lIOzGQzb_Bamb5w3QZxN9nDI_VOfaNSALKNi5KOL4Qs
-		        // AACE9147-F130-4632-B34F-A35480BDF5FF:Oz2fUIcHRKteqrdEDMlMpa97DqLk0JMINiD80riM8TE
+		        'Authorization': 'Basic ' + process.env.IS_API_CREDENTIALS
 		    },
 	        body : JSON.stringify({ 
 			    "action": "hello world", 
