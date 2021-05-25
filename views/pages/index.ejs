@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My React Website</title>
+    <link rel="stylesheet" type="text/css" href="/salesforce-ux/styles/salesforce-lightning-design-system.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script src="/js/banner-with-cta1.js" type="text/babel"></script>
+	<script src="/js/banner-with-cta3.js" type="text/babel"></script>
+	<script type="text/javascript" src="//cdn.evgnet.com/beacon/dpowney1463884/dev/scripts/evergage.min.js"></script>
+</head>
+<body>
+
+	<main class="site-main slds-order_1" role="main" id="site-main-content" tabindex="-1">
+	    <header class="site site-masthead slds-grid slds-wrap">
+	        <div class="site-masthead-title slds-has-flexi-truncate slds-align-middle">
+	            <h1 title="React App">My React Website</h1>
+	        </div>
+	    </header>
+
+	    <!-- Client side React component state updated by IS web SDK -->
+	    <div id="banner1"></div>
+
+	    <!-- Server side rendered React component which calls IS event API for campaign response data-->
+	    <%- campaigns[0].html %>
+
+	    <!-- Client side placeholder React component which is replaced with content by IS web SDK-->
+	    <div id="banner3"></div>
+
+	</main>
+
+</body>
+</html>

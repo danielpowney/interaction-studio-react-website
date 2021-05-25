@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+}
+.site-masthead h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.71429;
+    color: #5876a3;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+main {
+    background-color: #fff;
+    color: #54698d;
+}
+main h1 {
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+}
+main h2 {
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+    color: #16325c
+}
+main h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #16325c;
+    margin-top: 2rem;
+}
+main p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.banner {
+    padding: 1rem 1.5rem;
+}
+.banner h1, .banner h2 {
+    color: #fff;
+    margin: 0 0 .5rem;
+    padding: 0;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.banner h2 {
+    font-weight: 400;
+    font-size: 1.5em
+    margin-bottom: 1em;
+
+}
+.banner a {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    color: #215ca0;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-color: #215ca0;
+    color: #fff;
+    background-color: #215ca0;
+    transition: background-color .15s, color .15s;
+}
+.banner a:hover {
+    border-color: #1c4e88;
+    color: #fff;
+    background-color: #1c4e88;
+}
