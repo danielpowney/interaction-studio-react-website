@@ -28,13 +28,15 @@ The rendered React component is made available to window object via reference `<
 
 The IS web template updates the state of the React component which makes it automatically re-render.
 
-```BannerWithCTA1.setState({
+```javascript
+BannerWithCTA1.setState({
     ctaUrl: context.ctaUrl,
     subheader: context.subheader,
     ctaText: context.ctaText,
     imageURL: context.imageURL,
     header: context.header
-});```
+});
+```
 
 ### 2. React component rendered server side using campaign data returned via IS API and server side campaigns
 
@@ -45,5 +47,3 @@ The controller.js file handles icnoming HTTP requests and returns the page HTML.
 HTML contains a div `<div id="banner3"></div>` which is added as a content zone in the sitemap. The JavaScript file banner-with-cta3.js attaches a placeholder React component to the element. 
 
 The React component shouldComponentUpdate() returns false which allows IS to manipulate the DOM. The IS web template replaces the React component HTML with campaign generated HTML.
-
-
