@@ -5,13 +5,20 @@ Page template uses EJS template engine. Index page is located here: ./views/page
 
 Express is used for the MVC pattern. routes.js and controller.js handle HTTP requests and return the page HTML.
 
+Make sure to set the following environment variables: 
+* IS_API_CREDENTIALS
+* IS_AUTHEVENT_URL
+* IS_BEACON_URL
+
 ## Patterns
 
-There are 3 patterns to integrate Interaction Studio campaigns with React components on a website
+There are 3 patterns to integrate Interaction Studio campaigns with React components on a website.
 
 1. IS web SDK updates React component state client side
 2. React component rendered server side using campaign data returned via IS API and server side campaigns
 3. IS web SDK replaces static React component content
+
+The corresponding React components are located in the /public/js folder.
 
 ### 1. IS web SDK updates React component state client side
 
