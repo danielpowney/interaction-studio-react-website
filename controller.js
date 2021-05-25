@@ -55,7 +55,7 @@ var controller = {
 	    };
 		const html = ReactDOMServer.renderToString(React.createElement(BannerWithCTA2, props));
 
-		res.render("pages/index", { campaigns : [ { html : html } ] } );
+		res.render("pages/index", { campaigns : [ { html : html } ], beaconURL : process.env.IS_BEACON_URL } );
 	}
 
 }
