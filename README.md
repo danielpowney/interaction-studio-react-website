@@ -40,10 +40,10 @@ BannerWithCTA1.setState({
 
 ### 2. React component rendered server side using campaign data returned via IS API and server side campaigns
 
-The controller.js file handles icnoming HTTP requests and returns the page HTML. When a request comes in, it calls the IS API to retrieve any server side campaigns. A React component is created server side and campaign data is passed in as properties for rendering. The HTML of the React componet is then output directly in the EJS template `<%- campaigns[0].html %>`
+The controller.js file handles incoming HTTP requests and returns the page HTML. When a request comes in, it calls the IS API to retrieve any server side campaigns. A React component is created server side and campaign data is passed in as properties for rendering. The HTML of the React component is then output directly in the EJS template `<%- campaigns[0].html %>`
 
 ### 3. IS web SDK replaces static React component content
 
-HTML contains a div `<div id="banner3"></div>` which is added as a content zone in the sitemap. The JavaScript file banner-with-cta3.js attaches a placeholder React component to the element. 
+HTML contains a div `<div id="banner3"></div>` which is configured as a content zone in the sitemap. The JavaScript file banner-with-cta3.js attaches a placeholder React component to the element. 
 
 The React component shouldComponentUpdate() returns false which allows IS to manipulate the DOM. The IS web template replaces the React component HTML with campaign generated HTML.
