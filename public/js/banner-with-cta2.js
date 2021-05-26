@@ -2,23 +2,18 @@ var React = require('react');
 
 class BannerWithCTA2 extends React.Component {
 
-	/**
-	 * Constructor
-	 */
-	constructor(props) {
-    	
-    	super(props);
+    /**
+     * Constructor
+     */
+    constructor(props) {
+
+        super(props);
     
   	}
-
-    doSomething()
-    {
-        console.log();
-    }
     
   	/**
-  	 * Render
-  	 */
+     * Render
+     */
     render() {
 
         let style = {

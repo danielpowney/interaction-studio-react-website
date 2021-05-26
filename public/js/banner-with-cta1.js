@@ -2,26 +2,26 @@
 
 class BannerWithCTA1 extends React.Component {
 
-	/**
-	 * Constructor
-	 */
-	constructor(props) {
+    /**
+     * Constructor
+     */
+    constructor(props) {
     	
-    	super(props);
+        super(props);
     
-    	this.state = { 
-    		ctaUrl : 'https://www.northerntrailoutfitters.com',
-    		subheader : 'Subheader Text',
-        	header : 'Header Text',
-        	ctaText : 'Call To Action',
-        	imageURL : 'https://cdn.evergage.com/evergage-content/nto/nto_hero_banner_bike.jpg', 
-        	// TODO add experience, userGroup and campaign
+        this.state = { 
+        ctaUrl : 'https://www.northerntrailoutfitters.com',
+            subheader : 'Subheader Text',
+            header : 'Header Text',
+            ctaText : 'Call To Action',
+            imageURL : 'https://cdn.evergage.com/evergage-content/nto/nto_hero_banner_bike.jpg', 
+            // TODO add experience, userGroup and campaign
      	};
   	}
 
-  	/**
-  	 * Render
-  	 */
+    /**
+     * Render
+      */
     render() {
 
         let style = {
@@ -41,6 +41,6 @@ class BannerWithCTA1 extends React.Component {
 }
 
 ReactDOM.render(
-	<BannerWithCTA1 ref={BannerWithCTA1 => {window.BannerWithCTA1 = BannerWithCTA1}} />,
-	document.getElementById('banner1')
+    <BannerWithCTA1 ref={BannerWithCTA1 => {window.BannerWithCTA1 = BannerWithCTA1}} />, 
+        document.getElementById('banner1')
 );

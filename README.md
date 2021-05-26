@@ -1,4 +1,4 @@
-# interaction-studio-react-website
+# Interaction Studio on a React Website
 Hello world node.js app which shows how Interaction Studio can work with a React based website
 
 Page template uses EJS template engine. Index page is located here: ./views/pages/index.ejs
@@ -9,6 +9,8 @@ Make sure to set the following environment variables:
 * IS_API_CREDENTIALS
 * IS_AUTHEVENT_URL
 * IS_BEACON_URL
+
+> Note: The example code in this repository is for educational purposes only
 
 ## Patterns
 
