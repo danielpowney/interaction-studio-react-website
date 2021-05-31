@@ -1,0 +1,16 @@
+<div class="banner" data-evg-campaign-id="{{campaign}}"
+data-evg-experience-id="{{experience}}" data-evg-user-group="{{userGroup}}" style="background-image: url({{imageURL}}); background-size: cover;">
+    {{#if header}}
+    <h1>
+        {{~header~}}
+    </h1>
+    {{/if}}
+    {{#if subheader}}
+    <h2>
+        {{~subheader~}}
+    </h2>
+    {{/if}}
+    <a class="slds-button slds-button_neutral" href="{{ctaUrl}}">
+        {{~ctaText~}}
+    </a>
+</div>

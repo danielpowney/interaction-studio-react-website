@@ -1,18 +1,29 @@
 var React = require('react');
 
-class BannerWithCTA2 extends React.Component {
+/**
+ *
+ */
+class Banner4Server extends React.Component {
 
     /**
      * Constructor
      */
     constructor(props) {
-
         super(props);
-    
   	}
     
-  	/**
-     * Render
+    /**
+     * When component has been rendered for the first time
+     */
+    componentDidMount() {}
+
+    /**
+     * When component tears down
+     */
+    componentWillUnmount() {}
+
+    /**
+     * DOM rendering logic
      */
     render() {
 
@@ -25,10 +36,10 @@ class BannerWithCTA2 extends React.Component {
             <div className="banner" style={style}>
                 {this.props.header !== '' ? <h1>{this.props.header}</h1> : ''}
                 {this.props.subheader !== '' ? <h2>{this.props.subheader}</h2> : ''}
-                <a href={this.props.ctaUrl}>{this.props.ctaText}</a>
+                <a className="slds-button slds-button_neutral" href={this.props.ctaUrl}>{this.props.ctaText}</a>
             </div>
         );
     }
 }
 
-module.exports = BannerWithCTA2;
+module.exports = Banner4Server;

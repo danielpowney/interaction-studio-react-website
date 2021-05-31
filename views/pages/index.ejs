@@ -7,11 +7,16 @@
     <title>My React Website</title>
     <link rel="stylesheet" type="text/css" href="/salesforce-ux/styles/salesforce-lightning-design-system.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script src="/js/banner-with-cta1.js" type="text/babel"></script>
-    <script src="/js/banner-with-cta3.js" type="text/babel"></script>
+    <script src="https://unpkg.com/redux@4.1.0/dist/redux.js"></script>
+
+    <script src="/js/banner1-placeholder.js" type="text/babel"></script>
+    <script src="/js/banner2-setState.js" type="text/babel"></script>
+    <script src="/js/banner3-reduxStore.js" type="text/babel"></script>
+
     <script type="text/javascript" src="<%- beaconURL %>"></script>
 </head>
 <body>
@@ -23,14 +28,20 @@
             </div>
         </header>
 
-        <!-- Client side React component state updated by IS web SDK -->
+        <!-- 1. IS replaces placeholder React component content-->
         <div id="banner1"></div>
 
-        <!-- Server side rendered React component which calls IS event API for campaign response data-->
-        <%- campaigns[0].html %>
-
-        <!-- Client side placeholder React component which is replaced with content by IS web SDK-->
+         <!-- 2. IS updates React component state directly -->
+        <div id="banner2"></div>
+        
+        <!-- 3. IS updates store which React component subscribes to -->
         <div id="banner3"></div>
+
+        <!-- 4. Server side rendered React component which uses Event API and server side campaigns-->
+        <% if (typeof campaigns !== 'undefined') { %>
+        	<%- campaigns[0].html %>
+        <% } %>
+
 
     </main>
 
