@@ -11,18 +11,26 @@
 
     function apply(context, template) {
 
-        setTimeout(function(){
-            Banner2SetState.setState({
-                ctaUrl: context.ctaUrl,
-                subheader: context.subheader,
-                ctaText: context.ctaText,
-                imageURL: context.imageURL,
-                header: context.header,
-                experience : context.experience,
-                userGroup : context.userGroup,
-                campaign : context.campaign
-            })}, 1000
-        );
+        return Evergage.util.resolveWhenTrue.bind(() => {
+
+            if (Evergage.cashDom("#banner2 .banner").length > 0 ) {
+
+                Evergage.DisplayUtils.bind(buildBindId(context));
+
+                Banner2SetState.setState({
+                    ctaUrl: context.ctaUrl,
+                    subheader: context.subheader,
+                    ctaText: context.ctaText,
+                    imageURL: context.imageURL,
+                    header: context.header,
+                    experience : context.experience,
+                    userGroup : context.userGroup,
+                    campaign : context.campaign
+                });
+
+                return true;
+            }
+        });
 
     }
 
@@ -30,6 +38,23 @@
     }
 
     function control(context) {
+         
+         return Evergage.util.resolveWhenTrue.bind(() => {
+
+            if (Evergage.cashDom("#banner2 .banner").length > 0 ) {
+
+                Evergage.DisplayUtils.bind(buildBindId(context));
+
+                Banner2SetState.setState({
+                    experience : context.experience,
+                    userGroup : context.userGroup,
+                    campaign : context.campaign
+                });
+
+                return true;
+            }
+        });
+
     }
 
     registerTemplate({

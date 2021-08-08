@@ -54,7 +54,10 @@ var controller = {
                         subheader: jsonResponse.campaignResponses[0].payload.subheader,
                         ctaText: jsonResponse.campaignResponses[0].payload.ctaText,
                         imageURL: jsonResponse.campaignResponses[0].payload.imageURL,
-                        header: jsonResponse.campaignResponses[0].payload.header
+                        header: jsonResponse.campaignResponses[0].payload.header,
+                        experience: jsonResponse.campaignResponses[0].payload.experience,
+                        userGroup: jsonResponse.campaignResponses[0].payload.userGroup,
+                        campaign: jsonResponse.campaignResponses[0].payload.campaign 
                     };
                     
                     const html = ReactDOMServer.renderToString(React.createElement(Banner4Server, props));

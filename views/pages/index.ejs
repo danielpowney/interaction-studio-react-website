@@ -38,9 +38,11 @@
         <div id="banner3"></div>
 
         <!-- 4. Server side rendered React component which uses Event API and server side campaigns-->
-        <% if (typeof campaigns !== 'undefined') { %>
-        	<%- campaigns[0].html %>
-        <% } %>
+        <div id="banner4">
+	        <% if (typeof campaigns !== 'undefined') { %>
+	        	<%- campaigns[0].html %>
+	        <% } %>
+        </div>
 
 
     </main>

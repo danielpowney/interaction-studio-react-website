@@ -31,7 +31,9 @@ class Banner1Placeholder extends React.Component {
      * DOM rendering logic
      */
     render() {
-        return (null)
+        return (
+            <div className="banner"></div>
+        )
     }
 }
 

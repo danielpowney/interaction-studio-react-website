@@ -33,10 +33,11 @@ class Banner4Server extends React.Component {
         }
 
         return (
-            <div className="banner" style={style}>
+            <div className="banner" style={style} data-evg-campaign-id={this.props.campaign} 
+                    data-evg-experience-id={this.props.experience} data-evg-user-group={this.props.userGroup}>
                 {this.props.header !== '' ? <h1>{this.props.header}</h1> : ''}
                 {this.props.subheader !== '' ? <h2>{this.props.subheader}</h2> : ''}
-                <a className="slds-button slds-button_neutral" href={this.props.ctaUrl}>{this.props.ctaText}</a>
+                <a className="slds-button slds-button_neutral" href={this.props.ctaUrl} data-evg-clickthrough>{this.props.ctaText}</a>
             </div>
         );
     }

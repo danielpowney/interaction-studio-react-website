@@ -23,15 +23,14 @@
          * Visit the Template Display Utilities documentation to learn more:
          * https://developer.evergage.com/campaign-development/web-templates/web-display-utilities
          */
-        setTimeout(function() { 
-            return Evergage.DisplayUtils
-            .bind(buildBindId(context))
-            .pageElementLoaded(contentZoneSelector)
-            .then((element) => {
-                const html = template(context);
-                Evergage.cashDom(element).html(html);
-            });
-        }, 1000 );
+        return Evergage.util.resolveWhenTrue.bind(() => {
+            if (Evergage.cashDom("#banner1 .banner").length > 0 ) {
+                return Evergage.DisplayUtils.bind(buildBindId(context)).pageElementLoaded(contentZoneSelector).then((element) => {
+                    const html = template(context);
+                    Evergage.cashDom(element).html(html);
+                });
+            }
+        });
         
     }
 
@@ -44,18 +43,19 @@
     function control(context) {
         //const contentZoneSelector = Evergage.getContentZoneSelector(context.contentZone);
         const contentZoneSelector = Evergage.getContentZoneSelector("banner1");
-        setTimeout(function() { 
-            return Evergage.DisplayUtils
-                .bind(buildBindId(context))
-                .pageElementLoaded(contentZoneSelector)
-                .then((element) => {
+
+        return Evergage.util.resolveWhenTrue.bind(() => {
+            if (Evergage.cashDom("#banner1 .banner").length > 0 ) {
+                return Evergage.DisplayUtils.bind(buildBindId(context)).pageElementLoaded(contentZoneSelector).then((element) => {
                     Evergage.cashDom(element).attr({
                         "data-evg-campaign-id": context.campaign,
                         "data-evg-experience-id": context.experience,
                         "data-evg-user-group": context.userGroup
                     });
                 });
-         }, 1000 );
+            }
+        });
+
     }
 
     registerTemplate({
