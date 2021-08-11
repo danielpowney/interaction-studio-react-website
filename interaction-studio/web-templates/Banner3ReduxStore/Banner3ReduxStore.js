@@ -11,6 +11,8 @@
 
     function apply(context, template) {
 
+        Evergage.DisplayUtils.bind(buildBindId(context));
+
         myStore.dispatch({ 
             type : 'BANNER_UPDATE', 
             payload : { 
@@ -25,25 +27,14 @@
             }
         });
 
-        // Start tracking impressions
-        document.dispatchEvent(
-            new CustomEvent(window.Evergage.CustomEvents.OnTemplateDisplayEnd, {
-                detail: {
-                    payload: {
-                        campaign: context.campaign,
-                        experience: context.experience,
-                        userGroup: context.userGroup
-                    }
-                }
-            })
-        );
-
     }
 
     function reset(context, template) {
     }
 
     function control(context) {
+
+        Evergage.DisplayUtils.bind(buildBindId(context));
         
         // Add stats tracking data only
         myStore.dispatch({ 
@@ -54,19 +45,6 @@
                 campaign : context.campaign
             }
         });
-
-        // Start tracking impressions
-        document.dispatchEvent(
-            new CustomEvent(window.Evergage.CustomEvents.OnTemplateDisplayEnd, {
-                detail: {
-                    payload: {
-                        campaign: context.campaign,
-                        experience: context.experience,
-                        userGroup: context.userGroup
-                    }
-                }
-            })
-        );
 
     }
 

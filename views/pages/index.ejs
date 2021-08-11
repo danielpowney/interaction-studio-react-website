@@ -13,9 +13,11 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://unpkg.com/redux@4.1.0/dist/redux.js"></script>
 
+    <!-- my components -->
     <script src="/js/banner1-placeholder.js" type="text/babel"></script>
     <script src="/js/banner2-setState.js" type="text/babel"></script>
     <script src="/js/banner3-reduxStore.js" type="text/babel"></script>
+    <script src="/js/toggle-btn.js" type="text/babel"></script>
 
     <script type="text/javascript" src="<%- beaconURL %>"></script>
 </head>
@@ -43,6 +45,8 @@
 	        	<%- campaigns[0].html %>
 	        <% } %>
         </div>
+
+        <div id="container"></div>
 
 
     </main>

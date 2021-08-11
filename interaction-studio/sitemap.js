@@ -3,6 +3,13 @@ var allowedDomains = [
 ];
 
 Evergage.init().then(() => {
+    
+    // Custom event listeners for React component UI events
+    document.addEventListener('toggle-btn-click', () => {
+        Evergage.sendEvent({
+            'action' : 'Toggle Btn Click'
+        });
+    });
 
     //site-map here.
     const config = {
@@ -23,7 +30,9 @@ Evergage.init().then(() => {
         pageTypes: [
 
             /**
-             * Main page
+             * Home page
+             * 
+             * Match based on URL
              */
             {
                 name: "Home",

@@ -40,3 +40,11 @@ main p {
     margin-bottom: 1.5rem;
 }
 
+.toggle-btn {
+    text-align: center;
+    padding: 20px;
+}
+.toggle-btn p {
+    margin: 0px;
+    margin-top: 5px;
+}

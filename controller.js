@@ -21,12 +21,12 @@ var controller = {
         const https = require('https')
 
         const data = JSON.stringify({ 
-            "action": "hello world", 
+            "action": "Banner4ServerSide - Retrieve", 
             "source": { 
                 "channel": "Server" 
             },
             "user": {
-                "id": "testuser"
+                "id": "testuser" // make sure to update this with a real user identifier...
             }
         });
 

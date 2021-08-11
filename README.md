@@ -1,5 +1,5 @@
 # Interaction Studio on a React Website
-Hello world node.js app which shows how Interaction Studio can work with a React based website
+Hello world node.js app which shows how Interaction Studio can work with a React based website for both personalisation and listening
 
 Page template uses EJS template engine. Index page is located here: ./views/pages/index.ejs
 
@@ -24,9 +24,9 @@ Then navigate to localhost:3000 in your browser. See screenshot.PNG for an examp
 > Notes:
 * All code in this repository is for educational purposes only
 
-## Patterns
+## Personalisation
 
-There are 4 patterns to integrate Interaction Studio campaigns with React components on a website.
+There are 4 patterns for Interaction Studio campaigns to personalise content inside React components on a website.
 
 1. IS replaces placeholder React component content
 2. IS updates React component state directly
@@ -106,19 +106,6 @@ myStore.dispatch({
         campaign : context.campaign
     }
 });
-
-// Start tracking impressions
-document.dispatchEvent(
-    new CustomEvent(window.Evergage.CustomEvents.OnTemplateDisplayEnd, {
-        detail: {
-            payload: {
-                campaign: context.campaign,
-                experience: context.experience,
-                userGroup: context.userGroup
-            }
-        }
-    })
-);
 ```
 
 The rendered React component is made available to window object via reference `<Banner3ReduxStore ref={Banner3ReduxStore => {window.Banner3ReduxStore = Banner3ReduxStore}} />`. 
@@ -145,3 +132,43 @@ const html = ReactDOMServer.renderToString(React.createElement(Banner4Server, pr
 ```
 
 The HTML of the React component is output directly into the EJS template e.g. `<%- campaigns[0].html %>`
+
+Note that a separate API request is needed to send campaign stats (e.g. impressions, clicks etc...) for server side campaigns
+
+## Listening
+
+The most elegant way to listen to UI events within a React component is to change the React component to send custom JS events which Interaction Studio can listen to.
+
+For example, the ToggleBtn component sends a custom JavaScript event whenever the button is clicked
+
+```javascript
+handleClick() {
+    this.setState(prevState => ({
+        isToggleOn : !prevState.isToggleOn,
+        clicks : prevState.clicks + 1
+    }));
+    document.dispatchEvent(new CustomEvent('toggle-btn-click'));
+}
+
+/**
+ * DOM rendering logic
+ */
+render() {
+    return (
+       <div className="toggle-btn">
+           <a onClick={this.handleClick} className="slds-button slds-button_neutral">{this.state.isToggleOn ? 'ON' : 'OFF'}</a>
+           <p>Clicks: {this.state.clicks}</p>
+       </div>
+    )
+}
+```
+
+Then in the Interaction Studio sitemap code, an event listener catches the custom JavaScript event and then sends a "tracking" event to Interaction Studio as follows:
+```javascript
+// Custom event listeners for React component UI events
+document.addEventListener('toggle-btn-click', () => {
+    Evergage.sendEvent({
+        'action' : 'Toggle Btn Click'
+    });
+});
+```
